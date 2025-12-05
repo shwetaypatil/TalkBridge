@@ -28,5 +28,5 @@ It supports live messaging, channel creation, user authentication, and online pr
 ### 1️⃣ Clone or Download the Repository
 
 ```bash
-git clone https://github.com/your-username/TalkBridge.git
+https://github.com/shwetaypatil/TalkBridge.git
 cd TalkBridge
