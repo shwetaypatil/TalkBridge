@@ -76,7 +76,7 @@
 </div>
 </label>
 </div>
-<button onclick="login()" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] w-full hover:bg-primary/90 transition-colors">
+<button id="loginButton" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] w-full hover:bg-primary/90 transition-colors">
 <span class="truncate">Log In</span>
 </button>
 <div class="text-center">
@@ -90,59 +90,7 @@
 </div>
 </div>
 
-<script>
-  // If already logged in, go to channels
-  document.addEventListener("DOMContentLoaded", async () => {
-    if (window.supabase) {
-      const { data } = await supabase.auth.getSession();
-      if (data.session) {
-        window.location = "channels.html";
-      }
-    }
-  });
-
-  async function login() {
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value;
-
-    if (!email || !password) {
-      alert("Please enter email and password");
-      return;
-    }
-
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password
-    });
-
-    if (error) {
-      alert(error.message);
-      return;
-    }
-
-    const user = data.user;
-    if (user) {
-      // Mark user as ONLINE in users table
-      await supabase
-        .from("users")
-        .update({ status: "ONLINE" })
-        .eq("id", user.id);
-    }
-
-    window.location = "channels.html";
-  }
-
-  // show or hide password
-  const passwordInput = document.getElementById("password");
-  const togglePassword = document.getElementById("togglePassword");
-
-  togglePassword.addEventListener("click", function () {
-      const isHidden = passwordInput.type === "password";
-      passwordInput.type = isHidden ? "text" : "password";
-      this.querySelector("span").innerText = isHidden ? "visibility" : "visibility_off";
-  });
-</script>
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script src="supabase.js"></script>
+<script src="login.js"></script>
 </body></html>
