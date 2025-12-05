@@ -4,7 +4,7 @@ async function initChat() {
   //Check auth session
   const { data: sessionData } = await supabase.auth.getSession();
   if (!sessionData || !sessionData.session) {
-    window.location = "login_page.html";
+    window.location = "index.html";
     return;
   }
 
