@@ -3,7 +3,7 @@
 async function getCurrentUserOrRedirect() {
   const { data, error } = await supabase.auth.getUser();
   if (error || !data.user) {
-    window.location = "login_page.html";
+    window.location = "index.html";
     return null;
   }
   return data.user;
@@ -81,7 +81,7 @@ async function createChannel() {
 
   const { data: userData } = await supabase.auth.getUser();
   if (!userData || !userData.user) {
-    window.location = "login_page.html";
+    window.location = "index.html";
     return;
   }
 
@@ -123,7 +123,7 @@ async function logout() {
   await supabase.auth.signOut();
   localStorage.removeItem("currentChannelId");
   localStorage.removeItem("currentChannelSlug");
-  window.location = "login_page.html";
+  window.location = "index.html";
 }
 
 // Initialize sidebar when DOM is ready (used by both channels.html and chat.html)
