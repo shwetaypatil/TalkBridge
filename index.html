@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#135bec",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<div class="flex flex-1 w-full">
+<div class="flex flex-1 flex-col md:flex-row">
+<!-- Left Column -->
+<div class="hidden md:flex flex-1 flex-col justify-between p-12 bg-zinc-100 dark:bg-black/20">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
+<svg class="h-6 w-6 text-white" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<span class="text-xl font-bold text-slate-800 dark:text-white">TalkBridge</span>
+</div>
+<div class="flex flex-col items-center text-center gap-6">
+<img class="w-full max-w-sm rounded-xl object-cover" data-alt="Abstract vibrant geometric shapes representing communication and teamwork" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARk7e4-XoEr_pCoT__5aXyxLGB1o8LBt5WMEhNA2HWM5-B5UVEawvsQSipr_9VrZAXZjZkdc81T0qQzfEzRWhDq4Opmx-7Wj3IcNvuPixjqUZ57xrA7z7Vn_0INA6JrcQlvTR7q5gZvf6HkWtox_9o1ORACMQs7EFZvbS8tDpGLQiIv6NS7rzOiaFQler2b3suLweMpSUVfTGF4hKzqeZ4KL7ESTSaAZNzCBlCHJ50GMNiscPIeHNRI2cCxWJ_yurWmltI-TG1-xk"/>
+<div class="flex flex-col gap-2">
+<h2 class="text-2xl font-bold text-slate-800 dark:text-white">Connecting your team,</h2>
+<p class="text-slate-600 dark:text-slate-400">one message at a time.</p>
+</div>
+</div>
+<!-- <div class="text-center text-xs text-slate-500 dark:text-slate-500">
+<p>© 2024 ConnectApp. All Rights Reserved.</p>
+</div> -->
+</div>
+<!-- Right Column -->
+<div class="flex flex-1 flex-col justify-center items-center p-6 sm:p-12">
+<div class="flex flex-col w-full max-w-md gap-6">
+<div class="flex flex-col items-start gap-2">
+<h1 class="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Welcome Back</h1>
+<p class="text-slate-600 dark:text-slate-400">Please enter your details to sign in.</p>
+</div>
+<div class="flex flex-col gap-4">
+<label class="flex flex-col">
+<p class="text-base font-medium leading-normal pb-2 text-slate-900 dark:text-white">Email</p>
+<input id="email" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-slate-300 dark:border-[#324467] bg-white dark:bg-[#192233] text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 h-14 placeholder:text-slate-400 dark:placeholder:text-[#92a4c9] p-[15px] text-base font-normal leading-normal" placeholder="Enter your email" value=""/>
+</label>
+<label class="flex flex-col">
+<p class="text-slate-900 dark:text-white text-sm font-medium leading-normal pb-2">Password</p>
+<div class="relative flex w-full flex-1 items-stretch">
+<input id="password" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-[#324467] bg-white dark:bg-[#192233] focus:border-primary dark:focus:border-primary h-12 placeholder:text-slate-400 dark:placeholder:text-[#92a4c9] px-4 text-base font-normal leading-normal pr-12" placeholder="Enter your password" type="password" value=""/>
+<div id="togglePassword" class="absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400 dark:text-[#92a4c9] cursor-pointer">
+<span class="material-symbols-outlined">visibility_off</span>
+</div>
+</div>
+</label>
+</div>
+<button onclick="login()" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] w-full hover:bg-primary/90 transition-colors">
+<span class="truncate">Log In</span>
+</button>
+<div class="text-center">
+<p class="text-sm text-slate-600 dark:text-slate-400">
+                                Don't have an account? <a class="font-bold text-primary hover:underline" href="signup.html">Sign up</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+  // If already logged in, go to channels
+  document.addEventListener("DOMContentLoaded", async () => {
+    if (window.supabase) {
+      const { data } = await supabase.auth.getSession();
+      if (data.session) {
+        window.location = "channels.html";
+      }
+    }
+  });
+
+  async function login() {
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    if (!email || !password) {
+      alert("Please enter email and password");
+      return;
+    }
+
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password
+    });
+
+    if (error) {
+      alert(error.message);
+      return;
+    }
+
+    const user = data.user;
+    if (user) {
+      // Mark user as ONLINE in users table
+      await supabase
+        .from("users")
+        .update({ status: "ONLINE" })
+        .eq("id", user.id);
+    }
+
+    window.location = "channels.html";
+  }
+
+  // show or hide password
+  const passwordInput = document.getElementById("password");
+  const togglePassword = document.getElementById("togglePassword");
+
+  togglePassword.addEventListener("click", function () {
+      const isHidden = passwordInput.type === "password";
+      passwordInput.type = isHidden ? "text" : "password";
+      this.querySelector("span").innerText = isHidden ? "visibility" : "visibility_off";
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="supabase.js"></script>
+</body></html>

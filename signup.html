@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign Up Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+            font-size: 24px;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#135bec",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+</script>
+</head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark items-center justify-center p-4 sm:p-6" style='font-family: Inter, "Noto Sans", sans-serif;'>
+<div class="w-full max-w-md space-y-8">
+<div class="flex flex-col items-center">
+<div class="flex items-center gap-3 pb-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
+<svg class="h-6 w-6 text-white" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<span class="text-xl font-bold text-slate-800 dark:text-white">TalkBridge</span>
+</div>
+<div class="text-center">
+<p class="text-slate-900 dark:text-white text-3xl sm:text-4xl font-black leading-tight tracking-[-0.033em]">Create your account</p>
+<p class="text-slate-500 dark:text-[#92a4c9] text-base font-normal leading-normal mt-2">Join your team and start communicating effectively.</p>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<label class="flex flex-col flex-1">
+<p class="text-slate-900 dark:text-white text-sm font-medium leading-normal pb-2">Email Address</p>
+<input id="email" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-[#324467] bg-white dark:bg-[#192233] focus:border-primary dark:focus:border-primary h-12 placeholder:text-slate-400 dark:placeholder:text-[#92a4c9] px-4 text-base font-normal leading-normal" placeholder="Enter your email" type="email" value=""/>
+</label>
+<label class="flex flex-col flex-1">
+<p class="text-slate-900 dark:text-white text-sm font-medium leading-normal pb-2">Username</p>
+<input id="username" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-[#324467] bg-white dark:bg-[#192233] focus:border-primary dark:focus:border-primary h-12 placeholder:text-slate-400 dark:placeholder:text-[#92a4c9] px-4 text-base font-normal leading-normal" placeholder="Choose a username" value=""/>
+</label>
+<label class="flex flex-col flex-1">
+<p class="text-slate-900 dark:text-white text-sm font-medium leading-normal pb-2">Password</p>
+<div class="relative flex w-full flex-1 items-stretch">
+<input id="password" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-[#324467] bg-white dark:bg-[#192233] focus:border-primary dark:focus:border-primary h-12 placeholder:text-slate-400 dark:placeholder:text-[#92a4c9] px-4 text-base font-normal leading-normal pr-12" placeholder="Enter your password" type="password" value=""/>
+<div id="togglePassword" class="absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400 dark:text-[#92a4c9] cursor-pointer">
+<span class="material-symbols-outlined">visibility_off</span>
+</div>
+</div>
+</label>
+<label class="flex flex-col flex-1">
+<p class="text-slate-900 dark:text-white text-sm font-medium leading-normal pb-2">Confirm Password</p>
+<div class="relative flex w-full flex-1 items-stretch">
+<input id="confirmPassword" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-[#324467] bg-white dark:bg-[#192233] focus:border-primary dark:focus:border-primary h-12 placeholder:text-slate-400 dark:placeholder:text-[#92a4c9] px-4 text-base font-normal leading-normal pr-12" placeholder="Confirm your password" type="password" value=""/>
+<div id="toggleConfirm" class="absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400 dark:text-[#92a4c9] cursor-pointer">
+<span class="material-symbols-outlined">visibility_off</span>
+</div>
+</div>
+</label>
+</div>
+<div class="flex flex-col gap-4 pt-2">
+<button onclick="signup()" class="flex items-center justify-center whitespace-nowrap h-12 px-6 rounded-lg w-full bg-primary text-white text-base font-semibold leading-normal hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark">Sign Up</button>
+<p class="text-center text-sm text-slate-500 dark:text-slate-400">
+                    Already have an account? <a class="font-semibold text-primary hover:underline" href="login_page.html">Log in</a>
+</p>
+</div>
+<div class="text-center">
+<p class="text-xs text-slate-400 dark:text-slate-500">
+                    By signing up, you agree to our <a class="underline hover:text-slate-600 dark:hover:text-slate-300" href="#">Terms of Service</a> and <a class="underline hover:text-slate-600 dark:hover:text-slate-300" href="#">Privacy Policy</a>.
+                </p>
+</div>
+</div>
+</div>
+
+<script>
+async function signup() {
+  const email = document.getElementById("email").value.trim();
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
+
+  if (!email || !username || !password || !confirmPassword) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  if (password !== confirmPassword) {
+    alert("Passwords do not match");
+    return;
+  }
+
+  // Create account in Supabase Auth
+  const { data, error } = await supabase.auth.signUp({
+      email,
+      password
+  });
+
+  if (error) {
+      alert(error.message);
+      return;
+  }
+
+  const user = data.user;
+  if (user) {
+    // Row in public.users is created automatically by your trigger.
+    // Here we just update the username to what user chose.
+    await supabase
+      .from("users")
+      .update({ username })
+      .eq("id", user.id);
+  }
+
+  alert("Signup successful! Please check your email if confirmation is required.");
+  window.location = "login_page.html";
+}
+
+// show or hide password
+const passwordInput = document.getElementById("password");
+const togglePassword = document.getElementById("togglePassword");
+
+togglePassword.addEventListener("click", function () {
+    const isHidden = passwordInput.type === "password";
+    passwordInput.type = isHidden ? "text" : "password";
+    this.querySelector("span").innerText = isHidden ? "visibility" : "visibility_off";
+});
+
+// Show/Hide Confirm Password
+const confirmInput = document.getElementById("confirmPassword");
+const toggleConfirm = document.getElementById("toggleConfirm");
+
+toggleConfirm.addEventListener("click", function () {
+    const isHidden = confirmInput.type === "password";
+    confirmInput.type = isHidden ? "text" : "password";
+    this.querySelector("span").innerText = isHidden ? "visibility" : "visibility_off";
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="supabase.js"></script>
+
+</body></html>
